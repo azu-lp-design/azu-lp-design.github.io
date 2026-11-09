@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ===== 検索・SNS向けの設定 ===== -->
+  <!-- ブラウザのタブと検索結果に表示される名前 -->
+  <title>木もれびコーヒー｜ひとりでゆっくり過ごせる自家焙煎カフェ</title>
+  <!-- 検索結果に表示される説明文 -->
+  <meta name="description" content="駅から徒歩8分、住宅街の小さなカフェ「木もれびコーヒー」。自家焙煎のコーヒーと手作りの焼き菓子、本棚のある14席の店内で、ひとりの時間をゆっくりお過ごしください。9:00〜18:00、火曜定休。">
+  <!-- SNSでシェアされたときの表示 -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="木もれびコーヒー｜ひとりでゆっくり過ごせる自家焙煎カフェ">
+  <meta property="og:description" content="ひとりの時間が、いちばんおいしい場所。自家焙煎のコーヒーと手作りの焼き菓子、本棚のある14席のカフェです。">
+  <meta property="og:url" content="https://azu-lp-design.github.io/works/2026-11_cafe-lp/">
+  <!-- シェア用画像（横1200×縦630px） -->
+  <meta property="og:image" content="https://azu-lp-design.github.io/works/2026-11_cafe-lp/img/ogp.jpg">
+
+  <!-- ブラウザのタブに出る小さなアイコン（店名の「木」） -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236b4a33'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' fill='%23f6f1e7' font-family='serif'%3E%E6%9C%A8%3C/text%3E%3C/svg%3E">
+
+  <!-- 文字の形（Googleフォント）。見出しは明朝体、本文はゴシック体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- 見た目（色や文字の大きさ）は css フォルダの style.css に書いています -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== ① ファーストビュー（最初に目に入る部分） ===== -->
+  <header class="hero">
+    <!-- 店内の写真。差し替えるときは img フォルダに入れて、src と alt（写真の説明）を書き換えます -->
+    <img class="hero-photo" src="img/hero.jpg" alt="窓から光が差しこむ、木のテーブルと椅子が並ぶ店内" width="1066" height="1600" fetchpriority="high">
+
+    <div class="hero-text">
+      <p class="logo">木もれびコーヒー</p>
+      <h1>ひとりの時間が、<br>いちばんおいしい場所。</h1>
+      <p class="hero-sub">駅から徒歩8分。自家焙煎のコーヒーと手作りの焼き菓子、本棚のある14席のカフェです。</p>
+      <!-- 営業時間が変わったら、ここと「店舗情報」の2か所を書き換えます -->
+      <p class="hero-hours">9:00〜18:00 ／ 火曜定休</p>
+      <!-- 地図のボタン。今はページ内の「店舗情報」へ移動します。
+           実際のお店では、href="#access" を Googleマップのお店のURL に変え、target="_blank" rel="noopener" を足します（ページ内に同じボタンが3つあります） -->
+      <a class="button" href="#access">地図を見る</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== ② お悩みへの共感 ===== -->
+    <section class="section empathy">
+      <div class="inner">
+        <h2>ひとりで落ち着ける場所、<br>ありますか？</h2>
+        <p>少しだけ、ひとりになりたい朝。<br>チェーンのカフェはにぎやかで、<br>気になっていた個人のお店は、なんとなく入りにくい。</p>
+        <p>本を読んだり、ぼんやり窓の外を眺めたり。<br>そんな時間を過ごせる場所が、近くにあったら。</p>
+      </div>
+    </section>
+
+    <!-- ===== ③ コンセプト ===== -->
+    <section class="section concept">
+      <div class="inner">
+        <h2>ゆっくりしていって、<br>いいんです。</h2>
+        <p>木もれびコーヒーは、住宅街の中にある小さなカフェです。<br>「ひとりで来た人が、気がねなく長居できる場所」をつくりたくて、お店をはじめました。</p>
+        <p>窓際のカウンター席、自由に読める本棚、店内で焙煎するコーヒーの香り。<br>急がなくて大丈夫です。あなたのペースで過ごしてください。</p>
+      </div>
+    </section>
+
+    <!-- ===== ④ 過ごし方（写真3枚） ===== -->
+    <section class="section">
+      <div class="inner">
+        <h2>こんなふうに、過ごせます</h2>
+        <ul class="styles">
+          <li>
+            <img class="photo" src="img/counter.jpg" alt="木のカウンターに沿って並ぶスツール" width="1000" height="667" loading="lazy">
+            <h3>窓際のカウンター席で</h3>
+            <p>木もれびが差しこむ6つのカウンター席。おひとりさまに人気の席です。</p>
+          </li>
+          <li>
+            <img class="photo" src="img/books.jpg" alt="木の本棚に本や雑貨が並ぶ、居心地のいい店内" width="666" height="1000" loading="lazy">
+            <h3>本棚の本を、1冊</h3>
+            <p>小説、エッセイ、旅の本。店内の本は自由に読めます。お気に入りの1冊を持ってきても。</p>
+          </li>
+          <li>
+            <img class="photo photo-bottom" src="img/morning.jpg" alt="テーブルに置かれたコーヒーとケーキと本" width="750" height="1000" loading="lazy">
+            <h3>平日の朝は、モーニングで</h3>
+            <p>9:00〜11:00は、コーヒーと焼き菓子のモーニングセットをご用意しています。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== ⑤ こだわり ===== -->
+    <section class="section care">
+      <div class="inner">
+        <h2>毎日のこと、ひとつずつ丁寧に</h2>
+        <div class="care-list">
+          <div class="care-item">
+            <img class="photo" src="img/roasting.jpg" alt="焙煎したコーヒー豆をボウルにすくう手元" width="666" height="1000" loading="lazy">
+            <div>
+              <h3>自家焙煎のコーヒー</h3>
+              <p>生の豆を店内で焙煎し、焼きたての豆で淹れています。<br>深煎りから浅煎りまで、その日の気分に合わせてお選びください。</p>
+            </div>
+          </div>
+          <div class="care-item">
+            <img class="photo" src="img/bake.jpg" alt="白い器にのせた焼きたてのパン" width="1000" height="667" loading="lazy">
+            <div>
+              <h3>手作りの焼き菓子</h3>
+              <p>スコーン、パウンドケーキ、クッキー。毎朝お店で焼いています。<br>コーヒーに合う、甘さ控えめの味です。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ⑥ メニュー ===== -->
+    <!-- メニュー名と価格は、この表を書き換えます。行を増やすときは <tr>〜</tr> をコピーします -->
+    <section class="section menu">
+      <div class="inner">
+        <h2>メニュー</h2>
+        <table class="menu-table">
+          <caption>価格はすべて税込です</caption>
+          <tr><th colspan="2" class="menu-cat">コーヒー</th></tr>
+          <tr><td>本日のコーヒー<span class="menu-note">深煎り・浅煎りから選べます</span></td><td class="price">500円</td></tr>
+          <tr><td>カフェラテ</td><td class="price">580円</td></tr>
+          <tr><td>季節のブレンド</td><td class="price">550円</td></tr>
+          <tr><th colspan="2" class="menu-cat">焼き菓子</th></tr>
+          <tr><td>スコーン（2種から）</td><td class="price">300円</td></tr>
+          <tr><td>パウンドケーキ</td><td class="price">350円</td></tr>
+          <tr><td>クッキー（3枚）</td><td class="price">250円</td></tr>
+          <tr><th colspan="2" class="menu-cat">セット</th></tr>
+          <tr><td>モーニングセット<span class="menu-note">コーヒー＋焼き菓子／平日9:00〜11:00</span></td><td class="price">750円</td></tr>
+        </table>
+        <p class="small">※ 焼き菓子は数に限りがあります。その日のラインナップは Instagram でお知らせしています。</p>
+      </div>
+    </section>
+
+    <!-- ===== ⑦ お客様の声 ===== -->
+    <section class="section voices">
+      <div class="inner">
+        <h2>お客様の声</h2>
+        <ul class="voice-list">
+          <li>
+            <p>「仕事が休みの平日に、ひとりで来ています。窓際の席で本を読む時間が、いちばんの楽しみです。」</p>
+            <span>30代・会社員</span>
+          </li>
+          <li>
+            <p>「個人のお店は入りにくいと思っていましたが、店員さんの声かけがちょうどよくて、すぐに常連になりました。」</p>
+            <span>40代・近所にお住まいの方</span>
+          </li>
+          <li>
+            <p>「スコーンが好きで、テイクアウトもよく利用しています。」</p>
+            <span>30代・在宅で仕事をしている方</span>
+          </li>
+        </ul>
+        <p class="small">※ この作品はポートフォリオ用の架空のお店です。お客様の声も架空のものです。</p>
+      </div>
+    </section>
+
+    <!-- ===== ⑧ 店舗情報・アクセス ===== -->
+    <section class="section shop" id="access">
+      <div class="inner">
+        <h2>店舗情報</h2>
+        <div class="shop-wrap">
+          <!-- Googleマップ。架空のお店のため、今は東京駅周辺をサンプルとして表示しています。
+               実際のお店では、Googleマップでお店を開き「共有」→「地図を埋め込む」でコピーしたコードの src を、下の src と入れ替えます -->
+          <div class="map">
+            <iframe src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%A7%85&amp;z=15&amp;output=embed" title="お店の周辺の地図（サンプル表示）" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <p class="small">※ 架空のお店のため、地図はサンプル表示（東京駅周辺）です</p>
+          </div>
+          <dl class="shop-info">
+            <div><dt>店名</dt><dd>木もれびコーヒー</dd></div>
+            <div><dt>住所</dt><dd>〒000-0000<br>〇〇県〇〇市木もれび町1-2-3<br><span class="small">（架空の住所です）</span></dd></div>
+            <div><dt>アクセス</dt><dd>〇〇駅 南口から徒歩8分</dd></div>
+            <div><dt>営業時間</dt><dd>9:00〜18:00（ラストオーダー17:30）</dd></div>
+            <div><dt>定休日</dt><dd>火曜日</dd></div>
+            <div><dt>席数</dt><dd>14席（カウンター6席・テーブル8席）</dd></div>
+            <div><dt>その他</dt><dd>全席禁煙／テイクアウトできます</dd></div>
+          </dl>
+        </div>
+        <!-- 実際のお店では、ここに「Googleマップで開く」ボタン（お店のURL）を置きます -->
+      </div>
+    </section>
+
+    <!-- ===== ⑨ Instagram ===== -->
+    <section class="section insta">
+      <div class="inner center">
+        <h2>今日の焼き菓子は、Instagramで</h2>
+        <p>その日に焼いたお菓子や、臨時のお休みのお知らせをしています。<br>「今日は何があるかな」と、のぞいてみてください。</p>
+        <!-- 実際のお店では、下の span を <a class="button button-outline" href="InstagramのURL" target="_blank" rel="noopener">Instagramを見る</a> に変えます -->
+        <span class="button button-outline is-dummy">Instagramを見る</span>
+        <p class="small dummy-note">※ 架空のお店のため、Instagramのアカウントはありません</p>
+      </div>
+    </section>
+
+    <!-- ===== ⑩ 最後の呼びかけ ===== -->
+    <section class="section closing">
+      <div class="inner center">
+        <h2>近くに来たら、<br>ひと息つきにどうぞ。</h2>
+        <p>9:00〜18:00（火曜定休）。<br>おひとりでも、お気軽にお立ち寄りください。</p>
+        <div class="button-row">
+          <a class="button" href="#access">地図を見る</a>
+          <span class="button button-outline is-dummy">Instagramを見る</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="logo">木もれびコーヒー</p>
+    <small>&copy; 2026 木もれびコーヒー（ポートフォリオ用の架空のお店です）</small>
+    <p class="credit">制作：azu（ポートフォリオ作品）</p>
+  </footer>
+
+  <!-- ===== スマホの画面下に常に出す「地図を見る」ボタン（PCでは表示しません） ===== -->
+  <a class="fixed-cta" href="#access">地図を見る</a>
+
+  <!-- 最初の画面では固定ボタンを隠し、ファーストビューのボタンが見えなくなったら表示します -->
+  <script>
+    (function () {
+      var heroButton = document.querySelector('.hero .button');
+      var fixed = document.querySelector('.fixed-cta');
+      if (!heroButton || !fixed || !('IntersectionObserver' in window)) return;
+      document.documentElement.classList.add('js');
+      new IntersectionObserver(function (entries) {
+        fixed.classList.toggle('is-visible', !entries[0].isIntersecting);
+      }).observe(heroButton);
+    })();
+  </script>
+
+</body>
+</html>

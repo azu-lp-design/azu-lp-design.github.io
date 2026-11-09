@@ -9,3 +9,9 @@ CLAUDE.md
 
 # 練習ページ（本名入り・修正中のため、いったん公開しない）
 practice/
+
+# 売上・応募の記録（公開しない）
+records/
+
+# Claude Code の設定（公開しない）
+.claude/

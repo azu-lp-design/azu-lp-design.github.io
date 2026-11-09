@@ -1,0 +1,501 @@
+/* =========================================================
+   木もれびコーヒー LP の見た目
+   スマホの表示を先に作り、画面が広いときの設定を下の方で追加しています
+   ========================================================= */
+
+/* ===== 色と文字をまとめて決める場所 =====
+   ここを変えると、ページ全体の色が変わります */
+:root {
+  --wood: #6b4a33;      /* 木の茶色（見出し・ボタン） */
+  --wood-dark: #4e3524; /* 濃い茶色（ボタンにマウスを乗せたとき） */
+  --green: #3f5a45;     /* 深い緑（アクセント） */
+  --cream: #f6f1e7;     /* 生成り（背景） */
+  --paper: #fffdf8;     /* 少し明るい生成り（カードの背景） */
+  --text: #3a2f28;      /* 文字の色（黒ではなく、こげ茶） */
+  --sub: #6e6259;       /* 薄い文字の色 */
+  --line: #e4dccd;      /* 線の色 */
+
+  --font-title: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif; /* 見出し（明朝体） */
+  --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif; /* 本文（ゴシック体） */
+}
+
+/* ===== 全体の基本設定 ===== */
+html {
+  scroll-behavior: smooth; /* ページ内の移動をなめらかにする */
+}
+* {
+  box-sizing: border-box; /* 幅の計算をわかりやすくするおまじない */
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.9;      /* 行の高さ（ゆったり読めるように） */
+  letter-spacing: 0.03em;
+  padding-bottom: 72px;  /* 画面下の固定ボタンに、文章が隠れないように */
+}
+h1, h2, h3 {
+  font-family: var(--font-title);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--wood);
+  text-wrap: balance;
+  word-break: auto-phrase; /* 言葉の途中で改行しない（対応しているブラウザのみ） */
+}
+p {
+  margin: 0 0 1em;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== 写真の仮置き（色ブロック） =====
+   写真をもらったら <img src="img/〇〇.jpg" alt="写真の説明"> に差し替えます */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  border-radius: 12px;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}
+/* ===== 写真 =====
+   どんな形の写真でも、横4：縦3に切り抜いて表示します */
+.photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;   /* 枠いっぱいに、はみ出した部分は切り抜く */
+  border-radius: 12px;
+  background: var(--line); /* 写真の読み込み中に見える色 */
+}
+/* 写真の下の方を見せたいとき（料理がテーブルの上にある写真など） */
+.photo-bottom {
+  object-position: center bottom;
+}
+
+/* ===== ボタン ===== */
+.button {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--wood);
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid var(--wood);
+  border-radius: 999px;  /* 角を丸くする */
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: background 0.2s;
+}
+.button:hover {
+  background: var(--wood-dark);
+  border-color: var(--wood-dark);
+}
+/* 白抜きのボタン（Instagram用） */
+.button-outline {
+  background: transparent;
+  color: var(--wood);
+}
+.button-outline:hover {
+  background: var(--wood);
+  color: #fff;
+}
+/* 架空のお店のため押せないボタン */
+.button.is-dummy,
+.button.is-dummy:hover {
+  cursor: default;
+  background: transparent;
+  color: var(--wood);
+  opacity: 0.6;
+}
+.closing .button.is-dummy,
+.closing .button.is-dummy:hover {
+  color: #fff;
+  border-color: #fff;
+}
+.dummy-note {
+  margin-top: 8px;
+}
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* ===== ① ファーストビュー ===== */
+.hero-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--line);
+}
+.hero-text {
+  padding: 32px 20px 48px;
+  text-align: center;
+}
+.logo {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+.hero h1 {
+  font-size: 28px;
+  margin: 0 0 16px;
+}
+.hero-sub {
+  color: var(--sub);
+}
+.hero-hours {
+  display: inline-block;
+  font-size: 14px;
+  padding: 2px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+/* ===== 各セクション共通 ===== */
+.section {
+  padding: 64px 0;
+}
+.inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section h2 {
+  font-size: 24px;
+  margin: 0 0 28px;
+  text-align: center;
+}
+/* 見出しの下の小さな線 */
+.section h2::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin: 16px auto 0;
+  background: var(--green);
+}
+.section h3 {
+  font-size: 18px;
+  margin: 16px 0 8px;
+}
+.center {
+  text-align: center;
+}
+.small {
+  font-size: 13px;
+  color: var(--sub);
+}
+
+/* ===== ② 共感・③ コンセプト（文章を中央にそろえる） ===== */
+.empathy,
+.concept {
+  text-align: center;
+}
+.concept {
+  background: var(--paper);
+}
+
+/* ===== ④ 過ごし方 ===== */
+.styles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr; /* スマホでは1列 */
+  gap: 40px;
+}
+.styles p {
+  margin: 0;
+  color: var(--sub);
+}
+
+/* ===== ⑤ こだわり ===== */
+.care {
+  background: var(--paper);
+}
+.care-list {
+  display: grid;
+  gap: 40px;
+}
+.care-item {
+  display: grid;
+  gap: 8px;
+}
+.care-item p {
+  margin: 0;
+}
+
+/* ===== ⑥ メニュー ===== */
+.menu-table {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+.menu-table caption {
+  caption-side: bottom;
+  font-size: 13px;
+  color: var(--sub);
+  padding-top: 12px;
+  text-align: right;
+}
+.menu-table td {
+  padding: 12px 4px;
+  border-bottom: 1px dashed var(--line);
+}
+.menu-cat {
+  text-align: left;
+  font-family: var(--font-title);
+  color: var(--green);
+  padding: 28px 4px 4px;
+  font-size: 17px;
+}
+.price {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums; /* 数字の幅をそろえる */
+}
+.menu-note {
+  display: block;
+  font-size: 13px;
+  color: var(--sub);
+}
+.menu .small {
+  max-width: 560px;
+  margin: 16px auto 0;
+}
+
+/* ===== ⑦ お客様の声 ===== */
+.voices {
+  background: var(--paper);
+}
+.voice-list {
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+.voice-list li {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 20px;
+}
+.voice-list p {
+  margin: 0 0 8px;
+}
+.voice-list span {
+  font-size: 13px;
+  color: var(--sub);
+}
+
+/* ===== ⑧ 店舗情報 ===== */
+.shop-wrap {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+/* Googleマップ（横4：縦3の枠に表示） */
+.map iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  border-radius: 12px;
+  background: var(--line); /* 地図の読み込み中に見える色 */
+}
+.map .small {
+  margin: 8px 0 0;
+}
+.shop-info {
+  margin: 0;
+}
+.shop-info div {
+  display: grid;
+  grid-template-columns: 6em 1fr;
+  gap: 8px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+.shop-info dt {
+  font-weight: 700;
+  color: var(--wood);
+}
+.shop-info dd {
+  margin: 0;
+  min-width: 0;
+}
+
+/* ===== ⑨ Instagram ===== */
+.insta {
+  background: var(--paper);
+}
+
+/* ===== ⑩ 最後の呼びかけ ===== */
+.closing {
+  background: var(--green);
+  color: #fff;
+}
+.closing h2 {
+  color: #fff;
+}
+.closing h2::after {
+  background: #fff;
+}
+.closing .button {
+  background: #fff;
+  border-color: #fff;
+  color: var(--green);
+}
+.closing .button-outline {
+  background: transparent;
+  color: #fff;
+}
+.closing .button:hover {
+  background: var(--cream);
+  border-color: var(--cream);
+  color: var(--green);
+}
+
+/* ===== フッター ===== */
+.footer {
+  padding: 32px 20px;
+  text-align: center;
+  background: var(--wood-dark);
+  color: #e9dfd2;
+}
+.footer .logo {
+  color: #fff;
+  margin-bottom: 4px;
+}
+.credit {
+  margin: 8px 0 0;
+  font-size: 12px;
+}
+
+/* ===== スマホの画面下に常に出すボタン ===== */
+.fixed-cta {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: block;
+  padding: 16px;
+  padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)); /* iPhoneの下のバーに重ならないように */
+  background: var(--wood);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+/* JavaScriptが動くときだけ、最初は画面の下に隠しておく */
+.js .fixed-cta {
+  transform: translateY(100%);
+}
+.js .fixed-cta.is-visible {
+  transform: translateY(0);
+}
+
+/* キーボード操作のときに、今どこを選んでいるか分かるようにする */
+a:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   画面が広いとき（タブレット・PC）だけの設定
+   ========================================================= */
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0; /* PCでは固定ボタンがないので、余白もいらない */
+  }
+  .fixed-cta {
+    display: none;     /* PCでは固定ボタンを隠す */
+  }
+
+  /* ファーストビュー：写真の上に文字を重ねる */
+  .hero {
+    position: relative;
+  }
+  .hero-photo {
+    aspect-ratio: auto;
+    height: 640px;
+  }
+  .hero-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(560px, 90%);
+    padding: 48px 40px;
+    background: rgba(255, 253, 248, 0.92);
+    border-radius: 16px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .section {
+    padding: 96px 0;
+  }
+  .section h2 {
+    font-size: 30px;
+  }
+
+  /* 過ごし方：3列に並べる */
+  .styles {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  /* こだわり：写真と文章を横に並べる */
+  .care-item {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+  }
+  .care-item:nth-child(even) > .photo {
+    order: 2; /* 2つ目は写真を右側にして、交互に並べる */
+  }
+
+  /* お客様の声：3列に並べる */
+  .voice-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 店舗情報：地図と情報を横に並べる */
+  .shop-wrap {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+/* 動きを減らす設定にしている人には、アニメーションをしない */
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .fixed-cta {
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
